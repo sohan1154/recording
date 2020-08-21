@@ -1,0 +1,45 @@
+<ion-content class="ion-padding ion-text-center" class="background" no-scroll>
+
+  <div class="login-form">
+    <form #login="ngForm" (ngSubmit)="onSubmit(login)">
+      <ion-grid>
+        <ion-row class="ion-justify-content-center">
+          <ion-col class="ion-align-self-center" size-md="6" size-lg="5" size-xs="12">
+            <div class="ion-text-center">
+              <h1><b>Login</b></h1>
+            </div>
+            <div class="ion-padding">
+              <ion-item>
+                <ion-label position="floating">Email or Phone No</ion-label>
+                <ion-input name="email" ngModel type="text" required
+                  ng-pattern="/^([_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,5}))|(\d+$)$/">
+                </ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label position="floating">Password</ion-label>
+                <ion-input name="password" ngModel type="password" required minlength="5"></ion-input>
+              </ion-item>
+            </div>
+
+            <div class="ion-padding">
+              <a class="ion-align-self-center" (click)="forgotPassword()">Forgot Password?</a>
+              <ion-button type="submit" size="large" color="dark" expand="block" [disabled]="login.invalid">Login
+              </ion-button>
+              <h6 class="register ion-text-center">If you haven't registerd, please register here</h6>
+              <ion-button size="large" routerLink="/register" color="dark" expand="block">Register</ion-button>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </form>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-list>
+    <ion-item class="ion-text-center">
+      <ion-label (click)="termsAndCond()">Terms & Conditions</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-footer>

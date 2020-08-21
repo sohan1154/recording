@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)=onCancel()>
+        <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Candidate Information</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding ion-text-center" class="background" no-scroll>
+  <form #candidate="ngForm" (ngSubmit)="onSubmit(candidate)">
+    <ion-grid>
+      <ion-row class="ion-justify-content-center">
+        <ion-col class="ion-align-self-center" size-md="6" size-lg="5" size-xs="12">
+          <div class="ion-text-center">
+            <h1><b>Candiadate Information</b></h1>
+          </div>
+          <div class="ion-padding">
+            <ion-item>
+              <ion-label position="floating">Candidate Name</ion-label>
+              <ion-input name="name" ngModel type="text" required></ion-input>
+            </ion-item>
+    
+            <ion-item>
+              <ion-label position="floating">Candidate Email</ion-label>
+              <ion-input name="email" ngModel type="email" required email></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating">Candidate Mobile Number</ion-label>
+              <ion-input name="mobileNo" autocomplete="off" ngModel type="tel" required minlength="10" maxlength="10" ></ion-input>
+            </ion-item>
+          </div>
+    
+          <div class="ion-padding">
+            <ion-button type="submit" size="large" color="dark" expand="block" [disabled]="candidate.invalid">SUBMIT</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

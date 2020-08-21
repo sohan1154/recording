@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Edit Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <input type="file" #fileBtn class="filebtn" (change)="uploadPic($event)"/>
+
+  <ion-header>
+    <ion-toolbar class="background ion-text-center ion-padding" style="--background: #fff center center / cover;">
+      <ion-avatar (click)="selectImage()" style="width: 100px; height: 100px; margin: 0 auto 40px; position: relative;">
+        <img *ngIf="images.length > 0" [src]="images[0].path">
+        <img *ngIf="images.length == 0" [src]="currentUser.image">
+      </ion-avatar>
+      <ion-title color="dark">{{ currentUser.name }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form [formGroup]="form">
+    <ion-grid>
+      <ion-row color="primary" class="ion-justify-content-center">
+        <ion-col class="ion-align-self-center">
+          <div>
+
+            <ion-item>
+              <ion-label position="floating">Name</ion-label>
+              <ion-input name="name" type="text" formControlName="name" ></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating">Email</ion-label>
+              <ion-input name="email" type="email" formControlName="email"  [readonly]="true">
+              </ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating">Mobile Number</ion-label>
+              <ion-input type="tel" name="mobileNo" formControlName="mobileNo" minlength="10" maxlength="10"></ion-input>
+            </ion-item>
+
+            <div class="ion-text-center saveBtn">
+              <ion-button color="dark" (click)="onUpdateProfile()" type="submit" [disabled]="form.invalid">Save My
+                Changes</ion-button>
+            </div>
+
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+  <div class="ion-text-center changeBtn">
+    <ion-button color="dark" (click)="changePassword()">Change Password</ion-button>
+  </div>
+
+</ion-content>

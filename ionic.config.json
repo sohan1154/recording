@@ -1,0 +1,8 @@
+{
+  "name": "vavahiki-new",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

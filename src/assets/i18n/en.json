@@ -1,0 +1,24 @@
+{
+  "common": {
+    "label": {
+      "tab-one": "Tab One"
+    },
+    "title": {
+      "page-title": "Tab One"
+    },
+    "message": {
+      "welcome-message": "Welcome on Vaivahiki"
+    }
+  },
+  "home": {
+    "label": {
+      "tab-one": "Tab One"
+    },
+    "title": {
+      "page-title": "Tab One"
+    },
+    "message": {
+      "welcome-message": "Welcome on Vaivahiki"
+    }
+  }
+}

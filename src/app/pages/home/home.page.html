@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-no-padding ion-text-center">
+        
+
+      <div class="record">
+        <div>
+
+          <ion-button size="large" (click)="presentConfirm()" *ngIf="recording" color="danger">
+            <ion-icon name="stop-circle-outline" size="large"></ion-icon>
+          </ion-button>
+
+          <ion-button size="large" (click)="showToggleFun()" *ngIf="recording && !showToggle" color="success">
+            <ion-icon name="play" size="large"></ion-icon>
+          </ion-button>
+
+          <ion-button size="large" (click)="showToggleFun()" *ngIf="recording && showToggle" color="success">
+            <ion-icon name="pause" size="large"></ion-icon>
+          </ion-button>
+          <!-- <a class="round-buttonOn" (click)="stopRecord()" (click)='pauseTimer()' *ngIf="recording"><ion-icon name="mic"></ion-icon></a> -->
+          <a class="round-button" (click)="getCandidateInfo()" *ngIf="!recording"><ion-icon name="mic"></ion-icon></a>
+          <h1 class="timer">{{ hours + ':' + minutes + ':' + seconds }}</h1>
+        </div>
+      </div>
+
+   
+  <!-- <ion-list>
+    <ion-item *ngFor="let audio of audioList; index as i;">
+      <p>{{ audio.filename}}</p>
+      <ion-button clear item-end large block (click)="playAudio(audio.filename, i)"><ion-icon name="play"></ion-icon></ion-button>
+    </ion-item>
+  </ion-list> -->
+
+</ion-content>
+

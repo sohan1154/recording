@@ -1,0 +1,42 @@
+ <ion-app> 
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay">
+      <ion-menu-toggle auto-hide="false">
+        <ion-header>
+          <ion-toolbar class="ion-padding" class="background ion-text-center" style="--background: #fff url(../../assets/imgs/login-bg.jpg) no-repeat center center / cover;" >
+            <ion-avatar style="margin: 20px auto; border: 1px solid #fff; padding: 1px;">
+              <img [routerLink]="['/','edit-profile', userId]" src="{{ currentUser.image }}">
+            </ion-avatar>
+            <ion-title color="light" [routerLink]="['/','edit-profile', userId]">{{ currentUser.name }}</ion-title>
+          </ion-toolbar>
+        </ion-header>
+      </ion-menu-toggle>
+      
+      <ion-content color="tertiary">
+        <ion-list class="ion-no-padding">
+          
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages" >
+            <ion-item [routerDirection]="'root'" [routerLink]="[p.url]" color="tertiary" lines="none">
+              <ion-icon slot="start" [name]="p.icon"></ion-icon>
+              <ion-label>
+                {{p.title}}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <ion-menu-toggle auto-hide="false">
+            <ion-item [routerDirection]="'root'" (click)="logout()" color="tertiary" lines="none">
+              <ion-icon slot="start" name="power"></ion-icon>
+              <ion-label>
+                Logout
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+        </ion-list>
+      </ion-content>
+      
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

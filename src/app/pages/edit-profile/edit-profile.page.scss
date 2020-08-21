@@ -1,0 +1,39 @@
+.filebtn {
+    opacity: 0;
+    position: absolute;
+    top: -100em;
+    left: -100em;
+}
+
+ion-item{
+    --background: primary;
+    --color: black;
+}
+
+ion-button{
+    --background: black;
+}
+.register-form ion-label {
+    font-size: 23px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+.btn-theme {
+    margin: 40px auto;
+    text-align: center;
+    display: table;
+}
+.edite-icon{
+	position: absolute;
+    top: 38px;
+    font-size: 20px;
+    right: 38px;
+}
+
+.saveBtn {
+    margin-top: 50px; 
+}
+
+.changeBtn { 
+    margin-top: 100px;  
+}
